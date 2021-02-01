@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 // import 'bootstrap/dist/css/bootsrap.min.css'
-import NavbarComponent from './components/Navbar/index'
+import NavbarComponent from './Components/Navbar/index'
+import ItemListContainer from './Components/ItemListContainer';
 
 let stylesP = { color: 'purple', fontWeight: 'bolder',}
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
             <p style={stylesP}>Camisetas</p>
             <p style={stylesP}>Shorts</p>
             <p style={stylesP}>Zapatillas</p>
+        <ItemListContainer />
         </>
     );
 }
