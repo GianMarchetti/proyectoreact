@@ -1,7 +1,7 @@
+let styleI = { height:20, }
 const CartWidget = () => {
     return (
-        // <img src = "/images/carrito.png" />
-        <i class="fas fa-shopping-cart"></i>
+        <img src = "/images/carrito.png" style={styleI} />
     );
 }
 
