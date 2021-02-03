@@ -1,7 +1,8 @@
 //import 'bootstrap/dist/css/bootsrap.min.css';
 //import React from 'react';
+import ItemListContainer from "../../Containers/ItemListContainer";
 import CartWidget from "../CartWidget";
-import ItemListContainer from "../ItemListContainer";
+
 
 const NavbarComponent = () => {
     return ( 
