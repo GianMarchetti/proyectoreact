@@ -1,6 +1,6 @@
 //import 'bootstrap/dist/css/bootsrap.min.css';
 //import React from 'react';
-import ItemListContainer from "../../Containers/ItemListContainer";
+import ItemListContainer from "../../Containers/ItemListContainers/ItemListContainer";
 import CartWidget from "../CartWidget";
 
 

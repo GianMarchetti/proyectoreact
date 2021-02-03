@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import ItemCount from "../Components/ItemCount"
+import ItemCount from "../../Components/ItemCount";
+import {card} from "./ItemListContainer.module.css";
 
-const ItemListContainer = (props) => {
+const ItemListContainer = ({greeting}) => {
 
     const [contador, setContador]= useState(1)
 
@@ -23,7 +24,7 @@ const ItemListContainer = (props) => {
     
     return (
         <>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic ipsum, quia nostrum amet recusandae iusto beatae sapiente consectetur? Libero unde corrupti magnam ducimus quas sint repellat placeat perferendis explicabo animi.</p>
+            <p> {greeting} </p>
             <ItemCount stock={24} contador={contador} onAdd={onAdd} onSubstract={onSubstract} />
         </>
     );
