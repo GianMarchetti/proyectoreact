@@ -4,7 +4,7 @@ import './App.css';
 import NavbarComponent from './Components/Navbar/index'
 import ItemListContainer from './Containers/ItemListContainers/ItemListContainer';
 
-let stylesP = { color: 'purple', fontWeight: 'bolder',textAlign: 'center',}
+let stylesP = { color: 'orange', fontWeight: 'bolder',textAlign: 'center'}
 const App = () => {
     return(
         <>

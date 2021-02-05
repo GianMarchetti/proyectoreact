@@ -24,7 +24,9 @@ const ItemListContainer = ({greeting}) => {
     }
 
     const onBuy = () => {
-        console.log('Se ha hecho una compra')
+        if (contador) {
+            console.log('Se ha hecho una compra de', {contador} )
+        }
     }
 
     const [products, setProducts] = React.useState([]);
