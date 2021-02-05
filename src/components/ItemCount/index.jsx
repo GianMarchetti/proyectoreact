@@ -1,16 +1,16 @@
-// dfsafd
+import { btn } from "./ItemCount.module.css";
 
-const ItemCount = ({stock, onAdd, contador, onSubstract }) => {
+const ItemCount = ({stock, onAdd, contador, onSubstract, onBuy }) => {
     return (
         <>
-            <button onClick={onSubstract}>-</button>
+            <button onClick={onSubstract} className={btn}>-</button>
             <b>{contador}</b>
             {(contador < stock) ?
-                <button onClick={() => { onAdd(stock) }}>+</button>
+                <button onClick={() => { onAdd(stock) }} className={btn}>+</button>
                 : null
             }
             <div>
-                <button>Comprar</button>
+                <button onClick={onBuy} className={btn}>Comprar</button>
             </div>
         </>
     );

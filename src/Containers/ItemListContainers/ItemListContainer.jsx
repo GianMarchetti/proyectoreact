@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import ItemCount from "../../Components/ItemCount";
-import {card} from "./ItemListContainer.module.css";
+import ItemList from '../../Components/ItemList/ItemList';
+import productList from '../../Mocks/productList';
 
 const ItemListContainer = ({greeting}) => {
 
@@ -21,11 +22,35 @@ const ItemListContainer = ({greeting}) => {
             console.log('el valor no puede seguir bajando')
         }
     }
-    
+
+    const onBuy = () => {
+        console.log('Se ha hecho una compra')
+    }
+
+    const [products, setProducts] = React.useState([]);
+    const [isLoading, setIsLoading] = React.useState(false);
+
+    React.useEffect(() => {
+        setIsLoading(true);
+        const myPromise = new Promise((resolve, reject) => {
+            setTimeout(() => resolve(productList), 2000);
+        });
+
+        myPromise.then((result) => {
+            setProducts(result);
+            setIsLoading(false);
+        });
+    },[]);
+
+    if (isLoading) {
+        return <h1>Cargando productos...</h1>
+    }
+
     return (
         <>
             <p> {greeting} </p>
-            <ItemCount stock={24} contador={contador} onAdd={onAdd} onSubstract={onSubstract} />
+            <ItemList products={products} />
+            <ItemCount stock={24} contador={contador} onAdd={onAdd} onSubstract={onSubstract} onBuy={onBuy} />
         </>
     );
 }
