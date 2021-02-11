@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import ItemCount from "../../Components/ItemCount";
+import ItemDetail from '../../Components/ItemDetail';
+import ItemDetailContainer from '../../Components/ItemDetailContainer';
 import ItemList from '../../Components/ItemList/ItemList';
 import productList from '../../Mocks/productList';
 
@@ -23,8 +25,10 @@ const ItemListContainer = ({greeting}) => {
         }
     }
 
+    let btnc = document.getElementsByClassName('btnc')
     const onBuy = () => {
         if (contador) {
+            btnc.addEventListener('click', ItemDetailContainer)
             console.log('Se ha hecho una compra de', {contador} )
         }
     }
@@ -52,6 +56,7 @@ const ItemListContainer = ({greeting}) => {
         <>
             <p> {greeting} </p>
             <ItemList products={products} />
+            <ItemDetailContainer />
             <ItemCount stock={24} contador={contador} onAdd={onAdd} onSubstract={onSubstract} onBuy={onBuy} />
         </>
     );
