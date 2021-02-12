@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         productsPromise.then((resp) => {
-        setProducts(resp.find((li) => li.id === id));
+        setProducts(resp.find((li) => li.id === parseInt(id)));
         });
     },[]);
 
