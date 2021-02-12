@@ -1,27 +1,20 @@
-.btng {
-    width: 250px;
-    height: 60px;
-    background-color: orangered;
-    border: 1px solid black;
-    text-align: center;
-    border-radius: 2%;
-    padding: 1%;
-}
-
 .btn2 {
-    width: 124px;
+    width: 150px;
     display: inline-block;
     border: 1px solid black;
+    color: black;
+    background-color: orangered;
     border-radius: 8%;
     padding: 8px;
 }
 
 .btn {
     width: 50px;
-    border: orange;
+    /* border: 1px solid black; */
+    border: none;
     color: black;
-    background-color: orange;
-    margin: 2%;
+    background-color: orangered;
+    margin: 4%;
     border-radius: 2%;
 }
 
@@ -29,6 +22,16 @@
     width: 81px;
     border: 1px solid black;
     color: black;
-    background-color: orange;
+    background-color: orangered;
     border-radius: 8%;
+    margin: 1%;
+}
+
+.btnIC {
+    width: 50px;
+    border: 1px solid black;
+    color: black;
+    background-color: orangered;
+    margin: 4%;
+    border-radius: 2%;
 }
