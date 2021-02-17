@@ -17,7 +17,7 @@ export const Item = ({product}) => {
             <img src={product.img} alt="Product" width='200px' height='250px' />
             <p>Precio: {product.price}</p>
             <Link to={`/product/${product.id}`}>Ver más</Link>
-            {irCart ? <button className={btnIC}>Ir a Cart</button> : <ItemCount onAdd={onAdd} />}
+            {irCart ? <Link className={btnIC} to={`/cart`}>Ir a Cart</Link> : <ItemCount onAdd={onAdd} />}
         </div>
     );
 };

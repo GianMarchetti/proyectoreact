@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import ItemCount from "../ItemCount/index";
 import { card, h3S } from "../Item/Item.module.css";
-// import {Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 
 const ItemDetail = ({products}) => {
@@ -21,7 +21,7 @@ const ItemDetail = ({products}) => {
             <p>Precio: {products.price}</p>
             <p>Stock: {products.stock}</p>
             <p>Marca: {products.marca}</p>
-            {irCart ? <button>Ir a Cart</button> : <ItemCount onAdd={onAdd} />}
+            {irCart ? <Link to={`/cart`}>Ir a Cart</Link> : <ItemCount onAdd={onAdd} />}
         </div>
     )
 }

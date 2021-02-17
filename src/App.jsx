@@ -22,6 +22,9 @@ const App = () => {
                         <Route exact path='/product/:id'>
                             <ItemDetailContainer />
                         </Route>
+                        <Route exact path='/cart'>
+
+                        </Route>
                     </Switch>
             </Router>
         </>
