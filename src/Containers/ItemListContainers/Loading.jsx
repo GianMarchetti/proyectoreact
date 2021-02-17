@@ -1,6 +1,7 @@
+let style ={width:200 ,height:250}
 const Loading = () => {
     return(
-        console.log('vegeta esta haciendo flexiones')
+        <img src="../images/dbz.gif" alt="Gif dbz" style={style} />
     )
 }
 
