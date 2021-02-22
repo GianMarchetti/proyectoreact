@@ -5,10 +5,9 @@ const CartWidget = () => {
     return (
         <>
         <Link to={`/`} style={stylesP}>Inicio</Link>
-        <Link to={`/category/:categoryId`} style={stylesP}>Camisetas</Link>
-        <Link to={`/category/:categoryId`} style={stylesP}>Shorts</Link>
-        <Link to={`/category/:categoryId`} style={stylesP}>Zapatillas</Link>
-        <Link to={`/category/:categoryId`} style={stylesP}><i className="fas fa-cart-plus ">Carrito</i></Link>
+        <Link to={`/products`} style={stylesP}>Productos</Link>
+        <Link to={`/contact`} style={stylesP}>Contacto</Link>
+        <Link to={`/cart`} style={stylesP}><i className="fas fa-cart-plus ">Carrito</i></Link>
         </>
     );
 }

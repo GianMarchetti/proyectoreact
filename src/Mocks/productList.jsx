@@ -16,7 +16,7 @@ const productList = () => {
       {id: 1,img: 'https://i.ibb.co/YN8V3bB/camperakobe.jpg', name: 'Zapatillas', }
     ];
   };
-  
+
 const productsPromise = new Promise((rej, res) => {
     setTimeout(() => {
       rej(productsList("1"));

@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useParams } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
 import ItemList from '../../Components/ItemList/ItemList';
 import productsPromise from '../../Mocks/productList';
 import Loading from './Loading';
