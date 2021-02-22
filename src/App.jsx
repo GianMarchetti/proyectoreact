@@ -5,29 +5,30 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavbarComponent from './Components/Navbar/index'
 import ItemListContainer from './Containers/ItemListContainers/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer';
+import { GlobalContext } from './Context/GlobalContext';
 
-// let stylesP = { color: 'orange', fontWeight: 'bolder',textAlign: 'center'}
 const App = () => {
     return(
-        <>
+        <GlobalContext.Provider>
             <Router>
-                <NavbarComponent />;
+                <NavbarComponent />
                     <Switch>
                         <Route exact path='/' >
-                        {/* <p style={stylesP}>Camisetas</p>
-                        <p style={stylesP}>Shorts</p>
-                        <p style={stylesP}>Zapatillas</p> */}
                             <ItemListContainer greeting={'Bienvenido. Estos son nuestros productos'} />
                         </Route>
                         <Route exact path='/product/:id'>
+                            <ItemDetailContainer />
+                        </Route>
+                        <Route exact path='/category/categoryId'>
                             <ItemDetailContainer />
                         </Route>
                         <Route exact path='/cart'>
 
                         </Route>
                     </Switch>
+                <footer>Derechos reservados...</footer>
             </Router>
-        </>
+        </GlobalContext.Provider>
     );
 }
 
