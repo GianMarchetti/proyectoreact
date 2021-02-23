@@ -17,8 +17,6 @@ const ItemListContainer = ({greeting}) => {
         }
     }, [categoryId])
 
-
-
     return (
         <>
             <p> {greeting} </p>

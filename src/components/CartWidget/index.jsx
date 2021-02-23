@@ -5,7 +5,7 @@ const CartWidget = () => {
     return (
         <>
         <Link to={`/`} style={stylesP}>Inicio</Link>
-        <Link to={`/products`} style={stylesP}>Productos</Link>
+        <Link to={`/`} style={stylesP}>Productos</Link>
         <Link to={`/contact`} style={stylesP}>Contacto</Link>
         <Link to={`/cart`} style={stylesP}><i className="fas fa-cart-plus ">Carrito</i></Link>
         </>
