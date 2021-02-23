@@ -12,10 +12,9 @@ const NavbarComponent = ({product}) => {
             <Link to={`/`} ><img src="https://i.ibb.co/HKCm9z0/logodbz.jpg" alt="icon e-commerce" style={imnav} border="0"/></Link>
             <h1 > Indumentaria TenkaiKicks </h1> 
             <CartWidget />
-            <Link to={`/category/:categoryId`}><p style={stylesP}> Zapatillas</p></Link>
-            <Link to={`/category/${product.categoryId}`}><p style={stylesP}> Zapatillas</p></Link>
-            <Link to={`/category/:categoryId`}><p style={stylesP}> Camisetas</p></Link>
-            <Link to={`/category/:categoryId`}><p style={stylesP}> Shorts</p></Link>
+            <Link to={`/category/Zapatillas`}><p style={stylesP}> Zapatillas</p></Link>
+            <Link to={`/category/Camisetas`}><p style={stylesP}> Camisetas</p></Link>
+            <Link to={`/category/Shorts`}><p style={stylesP}> Shorts</p></Link>
         </nav>
     );
 }
