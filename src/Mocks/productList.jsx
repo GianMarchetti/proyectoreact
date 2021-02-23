@@ -13,7 +13,7 @@ const productsList =(id) => {
 
 const productList = () => {
     return [
-      {id: 1,img: 'https://i.ibb.co/YN8V3bB/camperakobe.jpg', name: 'Zapatillas', }
+      {id: 1, categoryId:'Zapatillas', img: 'https://i.ibb.co/YN8V3bB/camperakobe.jpg', name: 'Zapatillas', }
     ];
   };
 

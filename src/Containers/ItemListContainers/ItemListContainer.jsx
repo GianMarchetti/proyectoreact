@@ -15,7 +15,7 @@ const ItemListContainer = ({greeting}) => {
         }else{
             return productsPromise.then((resp)=> { setProd(resp.filter(resp => resp.categoryId === categoryId))})
         }
-    }, [categoryId])
+    },[categoryId])
 
     return (
         <>
