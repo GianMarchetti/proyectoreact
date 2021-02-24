@@ -5,13 +5,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavbarComponent from './Components/Navbar/index'
 import ItemListContainer from './Containers/ItemListContainers/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer';
-import { GlobalContext } from './Context/GlobalContext';
+import { CartProvider } from './Context/CartContext';
 // import {Link} from "react-router-dom";
 
 let foot = { backgroundColor:'black', color: 'orange', height: 100, marginTop: 8}
 const App = () => {
     return(
-        <GlobalContext.Provider>
+        <CartProvider>
             <Router>
                 <NavbarComponent />
                     <Switch>
@@ -30,7 +30,7 @@ const App = () => {
                     </Switch>
                 <footer style={foot}>Derechos reservados...</footer>
             </Router>
-        </GlobalContext.Provider>
+        </CartProvider>
     );
 }
 
