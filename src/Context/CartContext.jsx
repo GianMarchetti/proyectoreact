@@ -3,10 +3,15 @@ import { createContext, useState  } from "react";
 
 export const CartContext = createContext();
 
-export const CartProvider = ({children}) => {
-    const [cart, setCart]= useState([{id:1, name:'Zapatillas', price:824}])
+export const CartProvider = ({children, contador}) => {
+    
+    const [cart, setCart]= useState([{items:{id:3},quantity:{contador}}])
 
-    return <CartContext value={{cart, setCart}} >
+    // addItemCart()
+    // removeElementCart()
+    // clearCart()
+
+    return <CartContext.Provider value={{cart, setCart}} >
         {children}
-    </CartContext>
+    </CartContext.Provider>
 }

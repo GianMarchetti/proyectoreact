@@ -1,11 +1,12 @@
 import {useState} from 'react';
+import { CartContext } from '../../Context/CartContext';
 // import { CartProvider } from '../../Context/CartContext';
 import { btn, btn2, btnc } from "./ItemCount.module.css";
 
 const ItemCount = ({stock, onAdd}) => {
     
     const [contador, setContador] = useState(1);
-    const [cart, setCart] = useState();
+    const [cart, setCart] = useState(CartContext);
 
     const onPlus = () => {
         let max = 24;
@@ -39,7 +40,7 @@ const ItemCount = ({stock, onAdd}) => {
                    
             </div>
             <div>
-                <button onClick={handlerOnAdd, () =>{setCart([...cart, [{items:{id:3},quantity:{contador}}]])} } className={btnc}>Comprar</button>
+                <button onClick={ () =>{setCart([...cart, [{items:{id:3},quantity:{contador}}]])} } className={btnc}>Comprar</button>
             </div>
         </div>
         </>
