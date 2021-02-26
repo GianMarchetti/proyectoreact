@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import ItemCount from "../ItemCount/index";
-import { card, h3S } from "../Item/Item.module.css";
+import { card, h3S, H4S } from "../Item/Item.module.css";
 import {Link} from "react-router-dom";
 
 
@@ -17,10 +17,10 @@ const ItemDetail = ({products}) => {
         <div className={card} >
             <h3 className={h3S} > {products.name} </h3>
             <img src={products.img} alt="Product" width='200px' height='250px' />
-            <p> {products.description} </p>
-            <p>Precio: {products.price}</p>
-            <p>Stock: {products.stock}</p>
-            <p>Marca: {products.marca}</p>
+            <p className={H4S}> {products.description} </p>
+            <p> <h4 className={H4S}> Precio: </h4> {products.price} </p>
+            <p> <h4 className={H4S}> Stock: </h4> {products.stock} </p>
+            <p> <h4 className={H4S}> Marca: </h4> {products.marca} </p>
             {irCart ? <Link to={`/cart`}>Ir a Cart</Link> : <ItemCount onAdd={onAdd} />}
         </div>
     )
