@@ -29,9 +29,10 @@ const ItemCount = ({stock, onAdd, products}) => {
         }
     };
 
-    // const handlerOnAdd = () => {
-    //     onAdd(contador);
-    // };
+    const handlerOnAdd = () => {
+        setCart([...cart, [{items:{products},quantity:{contador}}]])
+        onAdd(contador);
+    };
 
     useEffect(() => {
         productsPromise.then((resp) => {
@@ -48,7 +49,7 @@ const ItemCount = ({stock, onAdd, products}) => {
                 <button onClick={onPlus} className={btn}>+</button>
             </div>
             <div>
-                <button onClick={() =>{setCart([...cart, [{items:{products},quantity:{contador}}]])} } className={btnc}>Comprar</button>
+                <button onClick={handlerOnAdd} className={btnc}>Comprar</button>
             </div>
         </div>
         </>
