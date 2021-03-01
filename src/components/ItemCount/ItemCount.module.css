@@ -1,9 +1,9 @@
 .btn2 {
     width: 150px;
     display: inline-block;
-    border: 1px solid black;
+    border: 1px solid gold;
     color: black;
-    background-color: orangered;
+    background-color: #4a0080;
     border-radius: 8%;
     padding: 8px;
 }
@@ -13,25 +13,25 @@
     /* border: 1px solid black; */
     border: none;
     color: black;
-    background-color: orangered;
+    background-color: #4a0080;
     margin: 4%;
     border-radius: 2%;
 }
 
 .btnc {
     width: 81px;
-    border: 1px solid black;
+    border: 1px solid gold;
     color: black;
-    background-color: orangered;
+    background-color: #4a0080;
     border-radius: 8%;
     margin: 1%;
 }
 
 .btnIC {
     width: 50px;
-    border: 1px solid black;
+    border: 1px solid gold;
     color: black;
-    background-color: orangered;
+    background-color: #4a0080;
     margin: 4%;
     border-radius: 2%;
 }

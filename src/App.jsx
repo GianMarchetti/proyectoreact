@@ -6,9 +6,10 @@ import NavbarComponent from './Components/Navbar/index'
 import ItemListContainer from './Containers/ItemListContainers/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer';
 import { CartProvider } from './Context/CartContext';
+import { CartContainer } from './Containers/ItemListContainers/CartContainer';
 // import {Link} from "react-router-dom";
 
-let foot = { backgroundColor:'black', color: 'orange', height: 100, marginTop: 8}
+let foot = { backgroundColor:'black', color: '#4a0080', height: 100, marginTop: 8}
 const App = () => {
     return(
         <CartProvider>
@@ -25,7 +26,7 @@ const App = () => {
                             <ItemListContainer />
                         </Route>
                         <Route exact path='/cart'>
-
+                            <CartContainer />
                         </Route>
                     </Switch>
                 <footer style={foot}>Derechos reservados...</footer>

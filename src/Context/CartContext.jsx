@@ -6,9 +6,9 @@ export const CartContext = createContext();
 
 export const CartProvider = ({children, contador, products}) => {
     
-    const [cart, setCart] = useState([{items:{products},quantity:{contador}}])
+    const [cart, setCart] = useState([{items:{id:products},quantity:{contador}}])
     console.log(cart)
-    let articulosCarrito = [];
+    let articulosCarrito = [[{items:{id:products},quantity:{contador}}]];
     const guardarStorage = () =>{
         localStorage.setItem(setCart, JSON.stringify(articulosCarrito));
     }

@@ -1,15 +1,18 @@
-import {useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom';
+import {useState, } from 'react';
+// import { useParams } from 'react-router-dom';
 // import { CartContext } from '../../Context/CartContext';
 // import { CartProvider } from '../../Context/CartContext';
 import { btn, btn2, btnc } from "./ItemCount.module.css";
-import productsPromise from '../../Mocks/productList';
+// import productsPromise from '../../Mocks/productList';
 
 const ItemCount = ({stock, onAdd, products}) => {
     
     const [contador, setContador] = useState(1);
     const [cart, setCart] = useState([{items:{id:3},quantity:{contador}}]);
-    const {id} = useParams();
+    let articulosCarrito = [[{items:{id:products},quantity:{contador}}]];
+    const guardarStorage = () =>{
+        localStorage.setItem(setCart, JSON.stringify(articulosCarrito));
+    }
 
     const onPlus = () => {
         let max = 24;
@@ -32,13 +35,9 @@ const ItemCount = ({stock, onAdd, products}) => {
     const handlerOnAdd = () => {
         setCart([...cart, [{items:{products},quantity:{contador}}]])
         onAdd(contador);
+        guardarStorage();
+        articulosCarrito = [];
     };
-
-    useEffect(() => {
-        productsPromise.then((resp) => {
-            setCart(resp.find((li) => li.id === parseInt(id)));
-            });
-    }, [id])
 
     return (
         <>
