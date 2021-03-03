@@ -3,6 +3,8 @@
     color: #4a0080;
     background-color: black;
     text-align: center;
+    border: solid 1px black;
+    margin: 2%;
 }
 
 .h3S {

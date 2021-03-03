@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import 'bootstrap/dist/css/bootsrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarComponent from './Components/Navbar/index'
 import ItemListContainer from './Containers/ItemListContainers/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer';

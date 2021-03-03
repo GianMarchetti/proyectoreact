@@ -1,4 +1,4 @@
-//import 'bootstrap/dist/css/bootsrap.min.css';
+// import 'bootstrap/dist/css/bootsrap.min.css';
 //import React from 'react';
 import CartWidget from "../CartWidget";
 import {nav} from "./navbar.module.css";
@@ -11,7 +11,7 @@ const NavbarComponent = ({product}) => {
     return ( 
         <nav className={nav}>
             <Link to={`/`} ><img src="https://i.ibb.co/VvcLy5Y/kobelogoblack.jpg" alt="icon e-commerce" style={imnav} border="0"/></Link>
-            <h1 > Indumentaria TenkaiKicks </h1> 
+            <h1 > Indumentaria MambaKicks </h1> 
             <Link to={`/`} style={stylesN}>Inicio</Link>
             <Link to={`/`} style={stylesN}>Productos</Link>
             <Link to={`/contact`} style={stylesN}>Contacto</Link>
