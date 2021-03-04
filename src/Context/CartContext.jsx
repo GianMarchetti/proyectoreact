@@ -6,11 +6,11 @@ export const CartContext = createContext();
 
 export const CartProvider = ({children, contador, products}) => {
     
-    const [cart, setCart] = useState([{items:{id:products},quantity:{contador}}])
+    const [cart, setCart] = useState([])
     console.log(cart)
-    let articulosCarrito = [[{items:{id:products},quantity:{contador}}]];
+    let articulosCarrito = [];
     const guardarStorage = () =>{
-        localStorage.setItem(setCart, JSON.stringify(articulosCarrito));
+        localStorage.setItem("carrito", JSON.stringify(articulosCarrito));
     }
 
     const isInCart = (id) =>{
@@ -45,7 +45,6 @@ export const CartProvider = ({children, contador, products}) => {
 
     const clearCart = () =>{
         removeElementCart();
-        articulosCarrito = [];
         guardarStorage();
     }
 

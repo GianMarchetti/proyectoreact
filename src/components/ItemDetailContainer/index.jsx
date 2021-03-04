@@ -19,19 +19,27 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         // conexion a la bd
         const baseDeDatos = getFirestore();
+
         // Guardamos la referencia de la coleccion que queremos tomar
         const itemCollection = baseDeDatos.collection('Items');
-        // const item = itemCollection.doc('BDNf9zkMz2R0ufwDjNwa');
+
         // Tomando los datos
-        itemCollection.get().then((value) => {
-            let aux = value.docs.map( async (product) => {
-                const CategoriasCollection = baseDeDatos.collection('categorias');// llamar otra vez a la bd tomando la categoriaID del element
+        itemCollection.get().then(async (value) => {
+            //  Usando Promise.all() para esperar que todos los metodos asincronicos se terminen de ejecutar.
+            let aux = await Promise.all(value.docs.map( async (product) => {
+
+                // Llamar otra vez a la bd tomando la categoriaID del element
+                const CategoriasCollection = baseDeDatos.collection('categorias');
+
+                // Tomamos el documento la id de la categoria
                 let auxCategorias = await CategoriasCollection.doc(product.data().categoryID).get()
-                return { ...product.data(), categoria: auxCategorias.data() };
-            })
+                return { ...product.data(), categoria:auxCategorias.data().nombre }
+            }))
+            console.log(aux)
             setProductos(aux);
-        });
+        })
     }, [])
+
 
     return (
         <>
