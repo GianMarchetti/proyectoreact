@@ -6,10 +6,11 @@ import NavbarComponent from './Components/Navbar/index'
 import ItemListContainer from './Containers/ItemListContainers/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer';
 import { CartProvider } from './Context/CartContext';
+// import { Cart } from './Containers/ItemListContainers/CartContainer/cart';
+import { Foot } from './Components/Footer';
 import { CartContainer } from './Containers/ItemListContainers/CartContainer';
 // import {Link} from "react-router-dom";
 
-let foot = { backgroundColor:'black', color: '#4a0080', height: 100, marginTop: 8}
 const App = () => {
     return(
         <CartProvider>
@@ -29,7 +30,7 @@ const App = () => {
                             <CartContainer />
                         </Route>
                     </Switch>
-                <footer style={foot}>Derechos reservados...</footer>
+                <Foot />
             </Router>
         </CartProvider>
     );

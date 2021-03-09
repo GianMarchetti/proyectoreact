@@ -1,4 +1,5 @@
 import { createContext, useState  } from "react";
+import { act } from "react-dom/test-utils";
 // import { CartContainer } from "../Containers/ItemListContainers/CartContainer";
 
 
@@ -7,11 +8,12 @@ export const CartContext = createContext();
 export const CartProvider = ({children, contador, products}) => {
     
     const [cart, setCart] = useState([])
-    console.log(cart)
+    // console.log(cart)
     let articulosCarrito = [];
-    const guardarStorage = () =>{
-        localStorage.setItem("carrito", JSON.stringify(articulosCarrito));
-    }
+
+    // const guardarStorage = () =>{
+    //     localStorage.setItem("carrito", JSON.stringify(articulosCarrito));
+    // }
 
     const isInCart = (id) =>{
         return cart.findIndex(products => products.item.id === id)
@@ -30,7 +32,8 @@ export const CartProvider = ({children, contador, products}) => {
             let listaNueva = cart.filter(products => item.item.id !== products.item.id)
             setCart([...listaNueva, NuevoItem])
         }
-        guardarStorage();
+        // guardarStorage();
+        // showQuantity();
     }
     const removeElementCart = (item) =>{
         
@@ -40,15 +43,20 @@ export const CartProvider = ({children, contador, products}) => {
             const productsId = item.target.getAttribute('data-id');
             articulosCarrito = articulosCarrito.filter(products => products.id !== productsId)
         }
-        guardarStorage();
+        // guardarStorage();
     }
 
     const clearCart = () =>{
         removeElementCart();
-        guardarStorage();
+        // guardarStorage();
     }
 
-    return <CartContext.Provider value={{cart, setCart, addCart, removeElementCart, clearCart}} >
+    const showQuantity = () =>{
+        console.log(cart)
+        return cart.reduce((ant,act) => ant.quantity + act.quantity)
+    }
+
+    return <CartContext.Provider value={{cart, setCart, addCart, removeElementCart, clearCart, showQuantity}} >
         {children}
     </CartContext.Provider>
 };

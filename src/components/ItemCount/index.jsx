@@ -5,15 +5,14 @@ import { useParams } from 'react-router-dom';
 import { btn, btn2, btnc } from "./ItemCount.module.css";
 // import productsPromise from '../../Mocks/productList';
 
-const ItemCount = ({stock, onAdd, products}) => {
+const ItemCount = ({stock, onAdd, products, showQuantity}) => {
     
     const [contador, setContador] = useState(1);
     const [cart, setCart] = useState([]);
-    let articulosCarrito = [];
-    const { id } = useParams();
-    const guardarStorage = () =>{
-        localStorage.setItem("carrito", JSON.stringify(articulosCarrito));
-    }
+    // const { id } = useParams();
+    // const guardarStorage = () =>{
+    //     localStorage.setItem("carrito", JSON.stringify(articulosCarrito));
+    // }
 
     const onPlus = () => {
         let max = 24;
@@ -33,13 +32,10 @@ const ItemCount = ({stock, onAdd, products}) => {
         }
     };
 
-    // const handlerOnAdd = () => {
-    //     // setCart([...cart, [{items:{products},quantity:{contador}}]])
-    //     console.log(setCart)
-    //     onAdd(contador);
-    //     guardarStorage();
-    //     articulosCarrito = [];
-    // };
+    const handlerOnAdd = () => {
+        console.log(setCart)
+        onAdd(contador);
+    };
 
     return (
         <>
@@ -50,7 +46,7 @@ const ItemCount = ({stock, onAdd, products}) => {
                 <button onClick={onPlus} className={btn}>+</button>
             </div>
             <div>
-                <button onClick={() => {localStorage.setItem("carrito", JSON.stringify([...cart, [{ items:{products}, quantity:{contador} }]]));}} className={btnc}>Comprar</button>
+                <button onClick={handlerOnAdd} className={btnc}>Comprar</button>
             </div>
         </div>
         </>

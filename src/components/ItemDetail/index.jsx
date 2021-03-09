@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState,useContext} from 'react';
 import ItemCount from "../ItemCount/index";
 import { h3S, H4S } from "../Item/Item.module.css";
 import { btnIC } from "../ItemCount/ItemCount.module.css";
@@ -7,14 +7,17 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { CartContext } from '../../Context/CartContext';
 
 
 const ItemDetail = ({products}) => {
 
     const [irCart, setIrCart] = useState(false);
+    const { addCart } = useContext(CartContext)
 
     const onAdd = (contador) => {
         console.log("Se ha seleccionó", contador, "productos");
+        addCart({item: products, quantity: contador})
         setIrCart(true);
     };
     

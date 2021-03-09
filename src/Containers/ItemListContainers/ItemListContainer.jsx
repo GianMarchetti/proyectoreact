@@ -1,24 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import ItemList from '../../Components/ItemList/ItemList';
 import { getFirestore } from '../../firebase';
 // import { CartContext } from '../../Context/CartContext';
-import productsPromise from '../../Mocks/productList';
+// import productsPromise from '../../Mocks/productList';
 import Loading from './Loading';
 
 const ItemListContainer = ({greeting}) => {
 
     const [prod, setProd] = useState([]);
-    const [productos, setProductos] = useState([]);
-    const {categoryId} = useParams();
-
-    // useEffect(() => {
-    //     if (categoryId === undefined ) {
-    //         return productsPromise.then((res) => setProd(res))
-    //     }else{
-    //         return productsPromise.then((resp)=> { setProd(resp.filter(resp => resp.categoryId === categoryId))})
-    //     }
-    // },[categoryId])
+    // const [productos, setProductos] = useState([]);
+    // const {categoryId} = useParams();
 
     useEffect(() => {
         // conexion a la bd
@@ -37,19 +29,19 @@ const ItemListContainer = ({greeting}) => {
 
                 // Tomamos el documento la id de la categoria
                 let auxCategorias = await CategoriasCollection.doc(product.data().categoryID).get()
-                return { ...product.data(), categoria:auxCategorias.data().nombre }
+                return { ...product.data(), categoria:auxCategorias.data().nombre, id: product.id}
             }))
-            console.log(aux)
-            setProductos(aux);
+            // console.log(aux)
+            setProd(aux);
         })
     }, [])
 
 
     return (
-        <>
-            <p> {greeting} </p>
+        <div>
+            <p style={{color:'black', textAlign:'center', fontSize:24}}> {greeting} </p>
             {prod.length < 1 ? <h1>Cargando productos... <Loading /></h1> : <ItemList products={prod} />}
-        </>
+        </div>
     );
 }
 export default ItemListContainer
