@@ -1,0 +1,43 @@
+#first-name {
+    border: #4a0080 solid;
+    margin: 1%;
+}
+
+#email {
+    border: #4a0080 solid;
+    margin: 1%;
+}
+
+#phone {
+    border: #4a0080 solid;
+    margin: 1%;
+}
+
+.form-control {
+    border: #4a0080 solid;
+    margin: 1%;
+}
+
+.btn-contacto {
+    border: #4a0080 solid;
+    margin: 1%;
+}
+
+.form-firebase {
+    border: #4a0080 solid;
+    border-radius: 1rem;
+    width: 23rem;
+    height: 18rem;
+    margin-top: 6rem;
+    margin-left: 36rem;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.firebase-button {
+    background-color: #4a0080;
+    border: black solid;
+    border-radius: 12%;
+    margin-top: 1rem;
+}

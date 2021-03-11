@@ -1,15 +1,17 @@
 import {Link} from "react-router-dom";
 import {Count} from '../../Things.module.css'
+import {CartIcon} from './CartWidget.module.css'
 
-
-const CartWidget = (showQuantity,contador) => {
-    const SumNum = () => {
-        showQuantity();
-    }
+const CartWidget = ({contador}) => {
+    
     return (
-        <>
-            <Link to={`/cart`}><i className="fas fa-cart-plus fa-2x" style={{color:'#4a0080'}}></i><span className={Count} SumNum={SumNum}>0</span></Link>
-        </>
+        <div className={CartIcon}>
+            <Link to={`/cart`}>
+                <i className="fas fa-cart-plus fa-2x" style={{color:'#4a0080'}}></i>
+                <span className={Count}>{contador}</span>
+            </Link>
+            
+        </div>
     );
 }
 

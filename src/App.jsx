@@ -8,7 +8,9 @@ import ItemDetailContainer from './Components/ItemDetailContainer';
 import { CartProvider } from './Context/CartContext';
 // import { Cart } from './Containers/ItemListContainers/CartContainer/cart';
 import { Foot } from './Components/Footer';
-import { CartContainer } from './Containers/ItemListContainers/CartContainer';
+import { Cart } from './Containers/CartContainer/cart'
+import { Contact } from '../src/Components/Contact/index';
+import { Firebase } from './firebase/Firebase';
 // import {Link} from "react-router-dom";
 
 const App = () => {
@@ -23,11 +25,17 @@ const App = () => {
                         <Route exact path='/product/:id'>
                             <ItemDetailContainer />
                         </Route>
-                        <Route exact path='/category/:categoryId'>
+                        <Route exact path='/category/:category'>
                             <ItemListContainer />
                         </Route>
+                        <Route exact path='/contact'>
+                            <Contact />
+                        </Route>
+                        <Route exact path='/firebase'>
+                            <Firebase />
+                        </Route>
                         <Route exact path='/cart'>
-                            <CartContainer />
+                            <Cart />
                         </Route>
                     </Switch>
                 <Foot />

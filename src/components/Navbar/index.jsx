@@ -9,8 +9,8 @@ import { CartContext } from "../../Context/CartContext";
 let stylesP = { color: '#4a0080', fontWeight: 'bolder',textAlign: 'center', margin: 2,textDecoration:'none'}
 let stylesN = { color: 'gold', fontWeight: 'bolder',textAlign: 'center', margin: 2,textDecoration:'none'}
 let imnav = { height:200, width:200, }
-const NavbarComponent = ({product}) => {
-    // const {id} = useContext(CartContext)
+const NavbarComponent = ({product,contador}) => {
+    const {id} = useContext(CartContext);
     return ( 
         <nav className={nav}>
             <Link to={`/`} ><img src="https://i.ibb.co/VvcLy5Y/kobelogoblack.jpg" alt="icon e-commerce" style={imnav} border="0"/></Link>

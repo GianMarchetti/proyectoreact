@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import ItemList from '../../Components/ItemList/ItemList';
 import { getFirestore } from '../../firebase';
 // import { CartContext } from '../../Context/CartContext';
-// import productsPromise from '../../Mocks/productList';
+// import productsPromise from '../../Mocks/productList'
+import { Firebase } from '../../firebase/Firebase';
 import Loading from './Loading';
 
 const ItemListContainer = ({greeting}) => {

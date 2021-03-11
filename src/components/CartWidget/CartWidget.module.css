@@ -1,0 +1,30 @@
+.CartIcon:hover .ShowCart {
+    position: absolute;
+    display: block;
+    right: 0%;
+    top: 32%;
+    background-color: gray;
+    border: solid 1px #4a0080;
+    padding: 20px;
+    min-height: 600px;
+    min-width: 300px;
+    z-index: 1;
+}
+
+.CartIcon {
+    display: inline;
+    position: relative;
+}
+
+.ShowCart {
+    display: none;
+}
+
+.imgCart {
+    width: 50px;
+    height: 50px;
+}
+
+.Tcart {
+    font-size: 16px;
+}

@@ -37,7 +37,7 @@ const ItemDetail = ({products}) => {
                         <p> <h4 className={H4S}> Marca: </h4> {products.marca} </p>
                         <p>Precio: {products.price}</p>
                 </Card.Text>
-                {irCart ? <Link className={btnIC} to={`/cart/`}>Ir a Cart</Link> : <ItemCount onAdd={onAdd} />}
+                {irCart ? <Link onAdd={onAdd} className={btnIC} to={`/cart/`}>Ir a Cart</Link> : <ItemCount onAdd={onAdd} />}
                 </Card.Body>
                 </Card>
             </Col>
